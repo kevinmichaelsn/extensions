@@ -51,7 +51,10 @@ class ScratchFetcher{
 	}
     fetchjson({u}){
         return fetch(u)
-        .then(response=>response.json())
+        .then(response=>function(){
+            r=response.json()
+            return JSON.stringify(r)
+        })
     }
 	extractjson({p,j}){
 		if(p in JSON.parse(j)){
