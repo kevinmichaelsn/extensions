@@ -3,7 +3,7 @@ class ScratchFetcher{
 	getInfo(){
 		 return {
 			"id": "Fetcher",
-			"name": "scratchfetcher",
+			"name": "Fetcher",
 			"blocks": [
 				  {
 					  "opcode": "fetchraw",
