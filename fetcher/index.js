@@ -1,6 +1,7 @@
 class ScratchFetcher {
     constructor() {
     }
+    
     getInfo() {
         return {
             "id": "Fetcher",
@@ -9,35 +10,37 @@ class ScratchFetcher {
                         {
                             "opcode": "fetchURL",
                             "blockType": "reporter",
-                            "text": "fetch raw data from URL [url]",
+                            "text": "fetch data from [url]",
                             "arguments": {
                                 "url": {
                                     "type": "string",
-                                    "defaultValue": ""
+                                    "defaultValue": "https://api.weather.gov/stations/KNYC/observations"
                                 },
                             }
                         },
                         {
                             "opcode": "jsonExtract",
                             "blockType": "reporter",
-                            "text": "extract property [name] from JSON data [data]",
+                            "text": "extract [name] from [data]",
                             "arguments": {
                                 "name": {
                                     "type": "string",
-                                    "defaultValue": ""
+                                    "defaultValue": "temperature"
                                 },
                                 "data": {
                                     "type": "string",
-                                    "defaultValue": ''
+                                    "defaultValue": '{"temperature": 12.3}'
                                 },
                             }
                         },
                 ],
         };
     }
+    
     fetchURL({url}) {
         return fetch(url).then(response => response.text())
     }
+    
     jsonExtract({name,data}) {
         var parsed = JSON.parse(data)
         if (name in parsed) {
