@@ -11,7 +11,7 @@ class ScratchFetcher{
 					  "text": "fetch raw data from URL: [u]",
 					  "arguments": {
 						  "u": {
-								  "type": "string",
+							"type": "string"
 						  },
 					  }
 				  },
@@ -21,10 +21,10 @@ class ScratchFetcher{
 					  "text": "extract property: [p] from JSON data: [j]",
 					  "arguments": {
 						  "p": {
-								  "type": "string"
+							"type": "string"
 						  },
 						  "j":{
-							  "type": "string"
+							"type": "string"
 						  }
 					  }
 				  }
@@ -32,21 +32,22 @@ class ScratchFetcher{
 			};
 	}
 	fetchraw({u}){
-		return fetch(u).then(response=>response.text())
+		return fetch(u)
+        .then(response=>response.text())
 	}
 	extractjson({p,j}){
 		if(p in JSON.parse(j)){
-			var out=JSON.parse(j)[p]
-			if(typeof(out)=="string"||typeof(out)=="number"){
+		    let out=JSON.parse(j)[p]
+            let t=typeof(out)
+			if(t=="string"||t=="number"){
 				return out
 			}
-			if(typeof(out)=="boolean"){
-				return typeof(out)?true:false
+			if(t=="boolean"){
+				return t?true:false
 			}
 			return JSON.stringify(out)
-		}else{
-			return ""
 		}
+		return ""
 	}
 }
 Scratch.extensions.register(new ScratchFetcher())
