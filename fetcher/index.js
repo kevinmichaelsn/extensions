@@ -11,7 +11,8 @@ class ScratchFetcher{
 					  "text": "fetch raw data from URL: [u]",
 					  "arguments": {
 						  "u": {
-							"type": "string"
+							"type": "string",
+                            "defaultValue": ""
 						  },
 					  }
 				  },
@@ -21,7 +22,8 @@ class ScratchFetcher{
                     "text": "fetch JSON data from URL: [u]",
                     "arguments": {
                         "u": {
-                          "type": "string"
+                          "type": "string",
+                          "defaultValue": ""
                         },
                     }
                   },
@@ -31,10 +33,12 @@ class ScratchFetcher{
 					  "text": "extract property: [p] from JSON data: [j]",
 					  "arguments": {
 						  "p": {
-							"type": "string"
+							"type": "string",
+                            "defaultValue": ""
 						  },
 						  "j":{
-							"type": "string"
+							"type": "string",
+                            "defaultValue": ""
 						  }
 					  }
 				  }
