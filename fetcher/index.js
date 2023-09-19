@@ -1,5 +1,7 @@
 class ScratchFetcher{
-	constructor(){}
+	constructor(){
+    
+    }
 	getInfo(){
 		 return {
 			"id": "Fetcher",
