@@ -1,11 +1,11 @@
-class ScratchFetcher {
+class ScratchFetch {
     constructor() {
     }
     
     getInfo() {
         return {
-            "id": "Fetcher",
-            "name": "fetcher",
+            "id": "Fetch",
+            "name": "Fetch",
             "blocks": [
                         {
                             "opcode": "fetchURL",
@@ -57,4 +57,5 @@ class ScratchFetcher {
         }
     }
 }
-Scratch.extensions.register(new ScratchFetcher())
+
+Scratch.extensions.register(new ScratchFetch())
