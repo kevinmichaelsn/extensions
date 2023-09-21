@@ -16,17 +16,6 @@ class ScratchFetcher{
 						  },
 					  }
 				  },
-                  {
-                    "opcode": "fetchjson",
-                    "blockType": "reporter",
-                    "text": "fetch JSON data from URL: [u]",
-                    "arguments": {
-                        "u": {
-                          "type": "string",
-                          "defaultValue": ""
-                        },
-                    }
-                  },
 				  {
 					  "opcode": "extractjson",
 					  "blockType": "reporter",
@@ -49,13 +38,6 @@ class ScratchFetcher{
 		return fetch(u)
         .then(response=>response.text())
 	}
-    fetchjson({u}){
-        return fetch(u)
-        .then(response=>function(){
-            r=response.json()
-            return JSON.stringify(r)
-        })
-    }
 	extractjson({p,j}){
 		if(p in JSON.parse(j)){
 		    let out=JSON.parse(j)[p]
